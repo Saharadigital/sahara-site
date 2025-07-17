@@ -133,12 +133,11 @@ export default function Showcase() {
         <section className="bg-[#121212] py-20 px-6">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg italic text-gray-300">
-              “Sahara Digital took our product to a level we didn’t think was
-              possible. Their eye for detail and technical ability are
-              unmatched.”
+              “We build brands the internet respects — fast, accessible,
+              beautiful.”
             </p>
             <div className="mt-4 text-[#f5a623] font-semibold uppercase text-sm">
-              — Client Name, CEO @ Company
+              — The Sahara Digital Principle
             </div>
           </div>
         </section>

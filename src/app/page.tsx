@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#121212] py-24 px-6 text-white">
+        {/* <section className="bg-[#121212] py-24 px-6 text-white">
           <div className="text-center mb-16">
             <div className="h-1 w-24 bg-[#f5a623] mx-auto mb-6 rounded-full" />
             <h2 className="text-3xl md:text-4xl font-display uppercase font-extrabold tracking-wide">
@@ -121,6 +121,22 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </section> */}
+        <section className="bg-[#121212] py-24 px-6 text-white">
+          <div className="text-center mb-12">
+            <div className="h-1 w-24 bg-[#f5a623] mx-auto mb-6 rounded-full" />
+            <h2 className="text-3xl md:text-4xl font-display uppercase font-extrabold tracking-wide">
+              Testimonials
+            </h2>
+            <p className="text-sm text-gray-400 mt-2 font-body">
+              We’re currently gathering feedback from our early clients.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto text-center text-gray-400 text-sm font-body italic">
+            Great work speaks for itself. As we grow, we’ll be sharing real
+            voices from those we&#39;ve worked with — stay tuned.
           </div>
         </section>
       </main>
