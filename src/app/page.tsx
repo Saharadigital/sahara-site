@@ -1,103 +1,130 @@
-import Image from "next/image";
+import "./globals.css";
+import Hero from "@/components/hero";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import { Briefcase, Code2, LayoutDashboard, PenTool } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Header />
+      <main className="min-h-screen bg-gradient-to-b from-white via-[#fdf8ee] to-[#f2eee9] text-text">
+        <Hero />
+        <section
+          role="region"
+          aria-labelledby="services-heading"
+          className="bg-gradient-to-b from-[#2a2a2a] via-[#1f1f1f] to-[#1a1a1a] pt-24 pb-8 text-white"
+        >
+          <div className="text-center mb-12">
+            <div className="h-1 w-24 bg-[#f5a623] mx-auto mb-6 rounded-full" />
+            <h2
+              id="services-heading"
+              className="text-3xl md:text-4xl font-display uppercase font-extrabold tracking-wide"
+            >
+              What We Do
+            </h2>
+            <p className="text-sm text-gray-400 mt-2 font-body">
+              Bringing bold design and clean code to every digital touchpoint.
+            </p>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-6">
+            {[
+              {
+                title: "Web Design",
+                description:
+                  "Immersive, responsive websites crafted to reflect your brand.",
+                icon: LayoutDashboard,
+              },
+              {
+                title: "Web Development",
+                description:
+                  "Fast, accessible, SEO-friendly code built to scale.",
+                icon: Code2,
+              },
+              {
+                title: "Product Design",
+                description:
+                  "From idea to interface—complete user-first product journeys.",
+                icon: PenTool,
+              },
+              {
+                title: "Precision Support",
+                description:
+                  "“Hands-on technical leadership to move faster, build smarter, and raise the bar.",
+                icon: Briefcase,
+              },
+            ].map((service, idx) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-[#2a2a2a] p-8 rounded-xl border border-[#3a3a3a] hover:border-[#f5a623] transition-all shadow-md hover:shadow-lg"
+                >
+                  <Icon className="w-10 h-10 text-[#f5a623] mb-4" />
+                  <h3 className="text-xl font-display font-bold text-white mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-300 font-body leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="bg-[#121212] py-24 px-6 text-white">
+          <div className="text-center mb-16">
+            <div className="h-1 w-24 bg-[#f5a623] mx-auto mb-6 rounded-full" />
+            <h2 className="text-3xl md:text-4xl font-display uppercase font-extrabold tracking-wide">
+              Testimonials
+            </h2>
+            <p className="text-sm text-gray-400 mt-2 font-body">
+              Real words from people we&#39;ve worked with.
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+            {[
+              {
+                name: "Alex Morgan",
+                role: "Founder, Horizon Studio",
+                quote:
+                  "Working with Sahara was game-changing. The clarity, speed, and quality were beyond anything we expected.",
+              },
+              {
+                name: "Priya Nair",
+                role: "Head of Product, Nova",
+                quote:
+                  "They just get it. From UX to performance, the end result felt tailored and tight. No wasted moves.",
+              },
+              {
+                name: "Daniel Cho",
+                role: "Creative Director, Frame & Co.",
+                quote:
+                  "Sahara combines design sensibility with technical precision. Total professionals — and fun to work with.",
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="bg-[#1a1a1a] p-6 rounded-xl border border-[#292929] hover:border-[#f5a623] shadow-md hover:shadow-lg transition-all"
+              >
+                <p className="text-sm text-gray-300 font-body leading-relaxed italic mb-6">
+                  “{t.quote}”
+                </p>
+                <div className="text-sm text-gray-400 font-body">
+                  <span className="block font-semibold text-white">
+                    {t.name}
+                  </span>
+                  <span className="text-xs">{t.role}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Footer />
+    </>
   );
 }
